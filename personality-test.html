@@ -29,11 +29,11 @@
     <!-- Sidebar -->
     <aside>
       <figure>
-        <img src="logo-image.jpg" alt="Gemini Personality Analyses logo">
+        <img src="logo-image.png" alt="Gemini Personality Analyses logo">
       </figure>
 
       <blockquote>
-        <p>Quote goes here</p>
+        </p>Self-discovery is a journey, not a destination.</p>
       </blockquote>
     </aside>
 
@@ -43,7 +43,7 @@
       <section>
         <h1>Personality Test</h1>
 
-        <img src="test-image.jpg" alt="Illustration representing personality traits">
+        <img src="test-image.jpeg" alt="Illustration representing personality traits">
 
 
 
@@ -87,9 +87,52 @@
 
           <button type="submit">Submit</button>
 
+          <button type="button" onclick="checkResults()">
+  Submit Quiz
+</button>
+
+<p id="result"></p>
+
         </form>
 
       </section>
+
+      <script>
+function checkResults() {
+
+  let score = 0;
+
+  // Question 1
+  let q1 = document.querySelector('input[name="q1"]:checked');
+
+  if (q1 && q1.value === "agree") {
+    score++;
+  }
+
+  // Question 2
+  let q2 = document.querySelector('input[name="q2"]:checked');
+
+  if (q2 && q2.value === "agree") {
+    score++;
+  }
+
+  // Display result
+  if (score >= 2) {
+    document.getElementById("result").innerHTML =
+      "You appear highly extroverted and organized!";
+  }
+
+  else if (score === 1) {
+    document.getElementById("result").innerHTML =
+      "You show balanced personality traits.";
+  }
+
+  else {
+    document.getElementById("result").innerHTML =
+      "You may be more reserved and spontaneous.";
+  }
+}
+</script>
 
     </main>
 
